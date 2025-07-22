@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HealthCare Clinic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://gmtti.edu/wp-content/uploads/2023/11/Global-Medical-A-Gateway-to-Excellence-in-Allied-Health-Training-in-Miami-scaled.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #0077b6;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffdd00;
+}
+
+.hero {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  background-attachment: fixed;
+}
+
+.hero h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 8px #000;
+}
+
+.section {
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+  scroll-margin-top: 80px;
+}
+
+.section h2 {
+  text-align: center;
+  color: #0077b6;
+  margin-bottom: 30px;
+  font-size: 36px;
+  position: relative;
+}
+
+.section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #0077b6;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.services, .testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 15px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.card img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: #023e8a;
+  font-size: 22px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: #0077b6;
+  outline: none;
+}
+
+.contact-form button {
+  padding: 14px 20px;
+  background: #0077b6;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #023e8a;
+}
+
+.counter-box {
+  text-align: center;
+  margin: 20px;
+  color: #023e8a;
+}
+
+.counter-box h3 {
+  font-size: 48px;
+  margin-bottom: 5px;
+  transition: transform 0.3s;
+}
+
+.counter-box h3:hover {
+  transform: scale(1.1);
+}
+
+.counter-box p {
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+footer {
+  background: #023e8a;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: none;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: background 0.3s ease;
+}
+
+#backToTop:hover {
+  background: #ffdd00;
+  color: #023e8a;
+}
+
+@media(max-width: 768px) {
+  .services, .testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  nav a {
+    margin: 0 10px;
+  }
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>HealthCare Clinic</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#appointment">Book Appointment</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Your Health, Our Priority</h1>
+    <p>Comprehensive care for your entire family.</p>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/100/000000/heart-with-pulse.png" alt="Cardiology">
+      <h3>Cardiology</h3>
+      <p>Expert heart care with state-of-the-art diagnostics and treatments.</p>
+      <p><strong>~Ch.Vasanthi,DM</strong></p>
+    </div>
+
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/100/stethoscope.png" alt="General Checkups">
+      <h3>General Checkups</h3>
+      <p>Routine exams to keep you and your loved ones healthy.</p>
+      <p><strong>~K.Hindu,MBBS</strong></p>
+    </div>
+
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/100/medical-doctor.png" alt="Pediatrics">
+      <h3>Pediatrics</h3>
+      <p>Specialized care for infants, children, and adolescents.</p>
+      <p><strong>~A.Mounika,MBBS,MD,DNB</strong></p>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" id="appointment">
+  <h2>Book an Appointment</h2>
+  <div class="contact-form">
+    <input type="text" id="appointName" placeholder="Your Name" required>
+    <input type="email" id="appointEmail" placeholder="Your Email" required>
+    <input type="text" id="appointPhone" placeholder="Your Phone Number" required>
+    
+    <select id="appointService" required>
+      <option value=""selected disabled>-- Select Service --</option>
+      <option value="Cardiology">Cardiology</option>
+      <option value="General Checkup">General Checkup</option>
+      <option value="Pediatrics">Pediatrics</option>
+    </select>
+
+    <input type="date" id="appointDate" required>
+    <textarea rows="4" id="appointMessage" placeholder="Additional Details (Optional)"></textarea>
+    <button onclick="bookAppointment()">Confirm Appointment</button>
+    <p id="appointSuccess" style="display:none; color: #0a8754; margin-top: 10px; font-weight: 600;">Appointment booked successfully!</p>
+  </div>
+</section>
+
+
+
+
+<section class="section" id="about">
+  <h2>About Us</h2>
+  <p style="text-align: center; max-width: 800px; margin: auto;">HealthCare Clinic has been a trusted name in community medical services for over 20 years. Our team of experienced doctors, nurses, and staff are dedicated to providing compassionate, high-quality care for your entire family.</p>
+</section>
+
+<section class="section" id="testimonials">
+  <h2>Patient Testimonials</h2>
+  <div class="testimonials">
+    <div class="card">
+      <p>"Absolutely wonderful experience! The doctors were so kind and thorough."</p>
+      <h4>- Priya S.</h4>
+    </div>
+    <div class="card">
+      <p>"Modern facilities and caring staff — highly recommended for families."</p>
+      <h4>- Raj K.</h4>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Clinic Stats</h2>
+  <div class="services">
+    <div class="counter-box">
+      <h3 id="patients">0</h3>
+      <p>Patients Served</p>
+    </div>
+    <div class="counter-box">
+      <h3 id="doctors">0</h3>
+      <p>Doctors</p>
+    </div>
+    <div class="counter-box">
+      <h3 id="awards">0</h3>
+      <p>Awards</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-form">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <textarea rows="5" id="message" placeholder="Your Message"></textarea>
+  <button onclick="sendMessage()">Send Message</button>
+  <p id="successMessage" style="display:none; color: #0a8754; margin-top: 10px; font-weight: 600;">Your message has been sent!</p>
+</div>
+</section>
+
+<footer>
+  <p>&copy; 2025 HealthCare Clinic. All rights reserved.</p>
+</footer>
+
+<button id="backToTop" onclick="scrollToTop()">↑</button>
+
+<script>
+  function isValidName(name) {
+  return /^[A-Za-z\s]+$/.test(name);
+}
+
+function isValidEmail(email) {
+  const emailPattern = /^[a-z0-9]+@[a-z]+\.[a-z]{2,}$/;
+  if (!emailPattern.test(email)) return false;
+
+  const localPart = email.split('@')[0];
+  const hasOnlyLetters = /^[a-z]+$/.test(localPart);
+  const hasLettersAndNumbers = /^[a-z]+[0-9]+$/.test(localPart);
+
+  return hasOnlyLetters || hasLettersAndNumbers;
+}
+
+
+function isValidPhone(phone) {
+  return /^\d{10}$/.test(phone);
+}
+
+  function bookAppointment() {
+  const data = {
+    name: document.getElementById("appointName").value.trim(),
+    email: document.getElementById("appointEmail").value.trim(),
+    phone: document.getElementById("appointPhone").value.trim(),
+    service: document.getElementById("appointService").value,
+    date: document.getElementById("appointDate").value,
+    message: document.getElementById("appointMessage").value.trim()
+  };
+
+  if (!data.name || !data.email || !data.phone || !data.service || !data.date) {
+    alert("Please fill out all required fields.");
+    return;
+  }
+  if (!isValidName(data.name)) {
+    alert("Name must contain only letters.");
+    return;
+  }
+
+  if (!isValidEmail(data.email)) {
+  alert("Email must be valid and contain at least one lowercase letter.");
+  return;
+}
+
+
+  if (!isValidPhone(data.phone)) {
+    alert("Phone number must be exactly 10 digits.");
+    return;
+  }
+  const selectedDate = new Date(data.date);
+const todayDate = new Date();
+todayDate.setHours(0, 0, 0, 0);  // reset time part for accurate date-only comparison
+
+if (selectedDate < todayDate) {
+  alert("Appointment date cannot be in the past. Please select a valid date.");
+  return;
+}
+
+
+  fetch("http://localhost:5000/api/appointments", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById("appointSuccess").style.display = "block";
+      document.getElementById("appointName").value = "";
+      document.getElementById("appointEmail").value = "";
+      document.getElementById("appointPhone").value = "";
+      document.getElementById("appointService").selectedIndex = 0;
+      document.getElementById("appointDate").value = "";
+      document.getElementById("appointMessage").value = "";
+    } else {
+      alert("Failed to book appointment.");
+    }
+  });
+}
+
+
+
+  // Animated Counter
+  function animateValue(id, start, end, duration) {
+    var range = end - start;
+    var current = start;
+    var increment = end > start ? 1 : -1;
+    var stepTime = Math.abs(Math.floor(duration / range));
+    var obj = document.getElementById(id);
+    var timer = setInterval(function() {
+      current += increment;
+      obj.innerHTML = current;
+      if (current == end) {
+        clearInterval(timer);
+      }
+    }, stepTime);
+  }
+
+  window.onload = function() {
+     const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  const minDate = `${yyyy}-${mm}-${dd}`;
+  document.getElementById("appointDate").setAttribute("min", minDate);
+    animateValue("patients", 0, 1520, 2000);
+    animateValue("doctors", 0, 30, 2000);
+    animateValue("awards", 0, 24, 2000);
+  };
+
+  // Back to Top button
+  window.onscroll = function() {
+    document.getElementById("backToTop").style.display = (document.documentElement.scrollTop > 200) ? "block" : "none";
+  };
+
+  function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+  function sendMessage() {
+  const data = {
+    name: document.getElementById("name").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    message: document.getElementById("message").value.trim()
+  };
+
+  if (!data.name || !data.email) {
+    alert("Please fill in your name and email.");
+    return;
+  }
+
+  fetch("http://localhost:5000/api/contacts", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  })
+  .then(response => {
+    if (response.ok) {
+      document.getElementById("successMessage").style.display = "block";
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+      setTimeout(() => {
+        document.getElementById("successMessage").style.display = "none";
+      }, 3000);
+    } else {
+      alert("Failed to send message.");
+    }
+  });
+}
+
+
+</script>
+
+
+</body>
+</html>
